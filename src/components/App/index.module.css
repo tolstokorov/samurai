@@ -1,6 +1,4 @@
 .grid {
-  --max-width: 920px;
-
   min-height: 100%;
 
   display: grid;

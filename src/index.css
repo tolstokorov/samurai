@@ -1,3 +1,7 @@
+:root {
+  --max-width: 920px;
+}
+
 html, body, div[id=root] {
   height: 100%;
   margin: 0;
