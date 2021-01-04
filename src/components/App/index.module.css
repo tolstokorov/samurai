@@ -1,0 +1,55 @@
+.grid {
+  --max-width: 920px;
+
+  min-height: 100%;
+
+  display: grid;
+  grid-template:
+  "header header header" minmax(100px, auto)
+  ".      center      ." 1fr
+  "footer footer footer" minmax(70px, auto)
+  / 1fr minmax(320px, var(--max-width)) 1fr;
+
+  /* tmp */
+  background-color: honeydew;
+}
+
+.header {
+  grid-area: header;
+
+  /* tmp */
+  background-color: darkorange;
+}
+
+.center {
+  grid-area: center;
+
+  display: grid;
+  grid-template:
+  "main nav" 1fr
+  / 1fr 200px;
+
+  /* tmp */
+  background-color: crimson;
+}
+
+.main {
+  grid-area: main;
+
+  /* tmp */
+  background-color: khaki;
+}
+
+.nav {
+  grid-area: nav;
+
+  /* tmp */
+  background-color: lightgreen;
+}
+
+.footer {
+  grid-area: footer;
+
+  /* tmp */
+  background-color: hotpink;
+}
