@@ -1,19 +1,22 @@
 import React from "react";
-// import styles from './index.module.css';
+import styles from './index.module.css';
+import art from './art.jpg';
 
 function Main() {
   return (
     <>
-      <center
-        style={{
+      <img className={ styles.art } src={ art } alt="art" draggable="false"/>
 
-        "--x": "30px",
-        fontSize: "var(--x)",
-        lineHeight: "var(--x)",
-        fontWeight: "bold",
-        textDecoration: "underline double"
-
-      }} >Main</center>
+      <center>
+        <div>ava + description</div>
+        <div>My posts</div>
+        <div>Nev post</div>
+        <div>
+          <div>post 1</div>
+          <div>post 2</div>
+        </div>
+      </center>
+      
     </>
   );
 }
