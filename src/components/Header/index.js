@@ -6,7 +6,7 @@ function Header() {
   return (
     <div className={ styles.headerInnerWrapper }>
       <div className={ styles.headerContent }>
-        <img className={ styles.logo } src={ logo } alt="logo"/>
+        <img className={ styles.logo } src={ logo } alt="logo" draggable="false"/>
       </div>
     </div>
   );
