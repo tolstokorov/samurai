@@ -1,0 +1,21 @@
+.headerInnerWrapper {
+    height: 100%;
+
+    display: grid;
+    grid-template:
+    ". content ." auto
+    / 1fr var(--max-width) 1fr;
+}
+
+.headerContent {
+    grid-area: content;
+
+    /* tmp */
+    background-color: red;
+}
+
+.logo {
+    height: 80px;
+
+    margin: 10px;
+}

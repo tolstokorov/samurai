@@ -1,11 +1,14 @@
 import React from "react";
-// import styles from './index.module.css';
+import styles from './index.module.css';
+import logo from './katana.svg';
 
 function Header() {
   return (
-    <>
-      <center>Header</center>
-    </>
+    <div className={ styles.headerInnerWrapper }>
+      <div className={ styles.headerContent }>
+        <img className={ styles.logo } src={ logo } alt="logo"/>
+      </div>
+    </div>
   );
 }
 
