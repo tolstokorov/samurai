@@ -45,3 +45,15 @@
 .footer {
   grid-area: footer;
 }
+
+
+@media (max-width: 600px) {
+  .centerInner {
+    grid-template:
+    "main" 1fr
+    / 1fr;
+  }
+  .nav {
+    display: none;
+  }
+}
