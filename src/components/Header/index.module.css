@@ -4,7 +4,10 @@
     display: grid;
     grid-template:
     ". content ." auto
-    / 1fr var(--max-width) 1fr;
+    / 1fr minmax(320px, var(--max-width)) 1fr;
+
+    /* tmp */
+    background-color: rgba(255, 0, 0, .5);
 }
 
 .headerContent {
@@ -15,7 +18,7 @@
 }
 
 .logo {
-    height: 80px;
+    height: 50px;
 
     --margin: 10px;
     margin: var(--margin);

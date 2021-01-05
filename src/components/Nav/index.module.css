@@ -1,3 +1,15 @@
+.navInner {
+    height: 100%;
+
+    /* tmp */
+    background-color: skyblue;
+}
+
 .list {
     list-style: none;
+
+    text-align: center;
+
+    margin: 0;
+    padding: 10px 0;
 }

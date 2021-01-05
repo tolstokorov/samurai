@@ -13,17 +13,19 @@ function App() {
         <Header />
       </header>
 
-      <section className={ styles.center }>
+      <div className={ styles.center }>
+        <div className={ styles.centerInner }>
 
-        <main className={ styles.main }>
-          <Main />
-        </main>
+          <main className={ styles.main }>
+            <Main />
+          </main>
 
-        <nav className={ styles.nav }>
-          <Nav />
-        </nav>
-
-      </section>
+          <nav className={ styles.nav }>
+            <Nav />
+          </nav>
+          
+        </div>
+      </div>
 
       <footer className={ styles.footer }>
         <Footer />

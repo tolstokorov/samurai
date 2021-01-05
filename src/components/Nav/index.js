@@ -3,7 +3,8 @@ import styles from './index.module.css';
 
 function Nav() {
   return (
-    <>
+    <div className={ styles.navInner }>
+
       <ul className={ styles.list } >
         <li>
           <a href="#tmp">Profile</a>
@@ -22,7 +23,8 @@ function Nav() {
           <a href="#tmp">Settings</a>
         </li>
       </ul>
-    </>
+      
+    </div>
   );
 }
 

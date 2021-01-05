@@ -4,7 +4,8 @@ import art from './art.jpg';
 
 function Main() {
   return (
-    <>
+    <div className={ styles.mainInner }>
+    
       <img className={ styles.art } src={ art } alt="art" draggable="false"/>
 
       <center>
@@ -18,8 +19,8 @@ function Main() {
           </div>
         </div>
       </center>
-      
-    </>
+
+    </div>
   );
 }
 

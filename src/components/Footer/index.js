@@ -1,11 +1,13 @@
 import React from "react";
-// import styles from './index.module.css';
+import styles from './index.module.css';
 
 function Footer() {
   return (
-    <>
-      <center>Footer</center>
-    </>
+    <div className={ styles.footerInnerWrapper }>
+      <div className={ styles.footerContent }>
+        <center>Footer</center>
+      </div>
+    </div>
   );
 }
 

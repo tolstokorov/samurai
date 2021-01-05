@@ -1,0 +1,18 @@
+.footerInnerWrapper {
+    height: 100%;
+
+    display: grid;
+    grid-template:
+    ". content ." auto
+    / 1fr minmax(320px, var(--max-width)) 1fr;
+
+    /* tmp */
+    background-color: rgba(220, 220, 220, .5);
+}
+
+.footerContent {
+    grid-area: content;
+
+    /* tmp */
+    background-color: gainsboro;
+}
