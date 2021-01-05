@@ -1,6 +1,6 @@
 import React from "react";
 import Header from '../Header';
-import Main from '../Main';
+import Profile from '../Profile';
 import Nav from '../Nav';
 import Footer from '../Footer';
 import styles from './index.module.css';
@@ -17,7 +17,7 @@ function App() {
         <div className={ styles.centerInner }>
 
           <main className={ styles.main }>
-            <Main />
+            <Profile />
           </main>
 
           <nav className={ styles.nav }>

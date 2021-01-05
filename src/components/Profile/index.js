@@ -2,9 +2,9 @@ import React from "react";
 import styles from './index.module.css';
 import art from './art.jpg';
 
-function Main() {
+function Profile() {
   return (
-    <div className={ styles.mainInner }>
+    <div className={ styles.profile }>
     
       <img className={ styles.art } src={ art } alt="art" draggable="false"/>
 
@@ -24,4 +24,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Profile;
