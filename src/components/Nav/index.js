@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from './index.module.css';
 
 function Nav() {
@@ -7,20 +8,20 @@ function Nav() {
 
       <ul className={ styles.list } >
         <li>
-          <a href="#tmp">Profile</a>
+          <Link to='/profile'>Profile</Link>
         </li>
         <li>
-          <a href="#tmp">Messages</a>
+          <Link to='/dialogs'>Messages</Link>
         </li>
         <li>
-          <a href="#tmp">News</a>
+          <Link to='/stub'>News</Link>
         </li>
         <li>
-          <a href="#tmp">Music</a>
+          <Link to='/stub'>Music</Link>
         </li>
         <br/>
         <li>
-          <a href="#tmp">Settings</a>
+          <Link to='/stub'>Settings</Link>
         </li>
       </ul>
       

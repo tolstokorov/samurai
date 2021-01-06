@@ -5,13 +5,29 @@ import Nav from '../Nav';
 import Footer from '../Footer';
 import styles from './index.module.css';
 import Dialogs from "../Dialogs";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 const Error404 = () => {
   return (
-    <center>404</center>
+    <div style={{
+      height: '100%',
+      backgroundColor: 'darkorange'
+    }}>
+      <center>404</center>
+    </div>                  
   );
-};
+}
+
+const Stub = () => {
+  return (
+    <div style={{
+      height: '100%',
+      backgroundColor: 'darkcyan'
+    }}>
+      <center>Stub</center>
+    </div>                  
+  );
+}
 
 function App() {
   return (
@@ -25,12 +41,16 @@ function App() {
         <div className={ styles.centerInner }>
 
           <main className={ styles.main }>
-            <Route exact path='/' component={ Profile } />
-            <Route path='/profile' component={ Profile } />
-            
-            <Route path='/dialogs' component={ Dialogs } />
-            
-            <Route path='*' component={ Error404 } />
+            <Switch>
+              <Route exact path='/' component={ Profile } />
+              <Route path='/profile' component={ Profile } />
+              
+              <Route path='/dialogs' component={ Dialogs } />
+
+              <Route path='/stub' component={ Stub } />
+
+              <Route path='*' component={ Error404 } />
+            </Switch>
           </main>
 
           <nav className={ styles.nav }>
