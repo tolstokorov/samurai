@@ -4,6 +4,7 @@ import Profile from '../Profile';
 import Nav from '../Nav';
 import Footer from '../Footer';
 import styles from './index.module.css';
+import Dialogs from "../Dialogs";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <div className={ styles.centerInner }>
 
           <main className={ styles.main }>
-            <Profile />
+            {/* <Profile /> */}
+            <Dialogs />
           </main>
 
           <nav className={ styles.nav }>
