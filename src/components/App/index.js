@@ -8,9 +8,6 @@ import Dialogs from "../Dialogs";
 import { Route } from "react-router-dom";
 
 function App() {
-
-  alert('v4');
-
   return (
     <div className={ styles.grid }>
 
