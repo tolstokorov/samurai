@@ -5,6 +5,7 @@ import Nav from '../Nav';
 import Footer from '../Footer';
 import styles from './index.module.css';
 import Dialogs from "../Dialogs";
+import { Route } from "react-router-dom";
 
 function App() {
   return (
@@ -18,8 +19,10 @@ function App() {
         <div className={ styles.centerInner }>
 
           <main className={ styles.main }>
-            {/* <Profile /> */}
-            <Dialogs />
+            <Route exact path='/' component={ Profile } />
+            <Route path='/Profile' component={ Profile } />
+            
+            <Route path='/Dialogs' component={ Dialogs } />
           </main>
 
           <nav className={ styles.nav }>
