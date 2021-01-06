@@ -8,6 +8,9 @@ import Dialogs from "../Dialogs";
 import { Route } from "react-router-dom";
 
 function App() {
+
+  alert('v4');
+
   return (
     <div className={ styles.grid }>
 
@@ -20,9 +23,9 @@ function App() {
 
           <main className={ styles.main }>
             <Route exact path='/' component={ Profile } />
-            <Route path='/Profile' component={ Profile } />
+            <Route path='/profile' component={ Profile } />
             
-            <Route path='/Dialogs' component={ Dialogs } />
+            <Route path='/dialogs' component={ Dialogs } />
           </main>
 
           <nav className={ styles.nav }>
