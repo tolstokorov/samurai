@@ -1,12 +1,14 @@
 import React from "react";
 import styles from './index.module.css';
+import Messages from './Messages';
+import DialogsList from './DialogsList';
+
 
 function Dialogs() {
   return (
-    <div className={ styles.dialogs }>
-    
-      <center>Dialogs</center>
-
+    <div className={ styles.dialogsPage }>
+      <DialogsList />
+      <Messages />
     </div>
   );
 }

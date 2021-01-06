@@ -1,6 +1,9 @@
-.dialogs {
+.dialogsPage {
     height: 100%;
 
-    /* tmp */
-    background-color: cyan;
+    display: grid;
+    grid-template:
+    'list one' auto
+    /200px 1fr;
+    gap: 2px;
 }
