@@ -13,3 +13,19 @@
     margin: 0;
     padding: 10px 0;
 }
+
+.list a {
+    text-decoration: none;
+
+    color: black;
+}
+
+.activeLink {
+    font-weight: bold;
+}
+a.activeLink::before {
+    content: '>>> ';
+}
+a.activeLink::after {
+    content: ' <<<';
+}

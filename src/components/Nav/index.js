@@ -1,6 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Route, Switch } from "react-router-dom";
 import styles from './index.module.css';
+
+const ProfileNavLink = (props) => {
+  return (
+    <NavLink className={ props.isRoot ? styles.activeLink : null } activeClassName={ styles.activeLink } to='/profile' >Profile</NavLink>
+  );
+};
 
 function Nav() {
   return (
@@ -8,20 +14,23 @@ function Nav() {
 
       <ul className={ styles.list } >
         <li>
-          <Link to='/profile'>Profile</Link>
+          <Switch>
+            <Route exact path='/' render={ () => <ProfileNavLink isRoot={ true } /> } />
+            <Route path='*' render={ () => <ProfileNavLink /> }  />
+          </Switch>
         </li>
         <li>
-          <Link to='/dialogs'>Messages</Link>
+          <NavLink activeClassName={ styles.activeLink } to='/dialogs'>Messages</NavLink>
         </li>
         <li>
-          <Link to='/stub'>News</Link>
+          <NavLink activeClassName={ styles.activeLink } to='/news'>News</NavLink>
         </li>
         <li>
-          <Link to='/stub'>Music</Link>
+          <NavLink activeClassName={ styles.activeLink } to='/music'>Music</NavLink>
         </li>
         <br/>
         <li>
-          <Link to='/stub'>Settings</Link>
+          <NavLink activeClassName={ styles.activeLink } to='/settings'>Settings</NavLink>
         </li>
       </ul>
       

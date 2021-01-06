@@ -47,7 +47,9 @@ function App() {
               
               <Route path='/dialogs' component={ Dialogs } />
 
-              <Route path='/stub' component={ Stub } />
+              <Route path='/news' component={ Stub } />
+              <Route path='/music' component={ Stub } />
+              <Route path='/settings' component={ Stub } />
 
               <Route path='*' component={ Error404 } />
             </Switch>
