@@ -7,6 +7,12 @@ import styles from './index.module.css';
 import Dialogs from "../Dialogs";
 import { Route } from "react-router-dom";
 
+const Error404 = () => {
+  return (
+    <center>404</center>
+  );
+};
+
 function App() {
   return (
     <div className={ styles.grid }>
@@ -23,6 +29,8 @@ function App() {
             <Route path='/profile' component={ Profile } />
             
             <Route path='/dialogs' component={ Dialogs } />
+            
+            <Route path='*' component={ Error404 } />
           </main>
 
           <nav className={ styles.nav }>
