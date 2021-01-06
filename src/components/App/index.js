@@ -7,27 +7,18 @@ import styles from './index.module.css';
 import Dialogs from "../Dialogs";
 import { Route, Switch } from "react-router-dom";
 
-const Error404 = () => {
-  return (
-    <div style={{
-      height: '100%',
-      backgroundColor: 'darkorange'
-    }}>
-      <center>404</center>
-    </div>                  
-  );
-}
 
-const Stub = () => {
-  return (
-    <div style={{
-      height: '100%',
-      backgroundColor: 'darkcyan'
-    }}>
-      <center>Stub</center>
-    </div>                  
-  );
-}
+const stubStyles = {
+  height: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: 'darkcyan',
+  fontSize: '20vmin'
+};
+const Stub = () => <div style={ stubStyles }>Stub</div>;
+const Error404 = () => <div style={ { ...stubStyles, backgroundColor: 'darkorange' } }>404</div>;
+
 
 function App() {
   return (
