@@ -11,7 +11,7 @@ const Message = (props) => <li className={ styles.item } >{ props.message }</li>
   for(let i = 1; i <= 3; ++i) {
     messagesTmpArr.push({
       id: i,
-      message: `Stub :) ${(Math.random() * 1e8)^0}`
+      message: `${(Math.random() * 1e8)^0} --- This is Stub :) ---`
     });
   }
 
@@ -36,7 +36,7 @@ const Messages = (props) => {
             <Route key={ route.id } exact path={ `/dialogs/id${route.id}` } >
               <ul className={ styles.list } >
                 { route.messages.map(item => <Message
-                key={ route.messages.id } message={ route.messages.message } />) }
+                key={ item.id } message={ 'ID-' + route.id + ': ' + item.message } />) }
               </ul>
             </Route>
           );
