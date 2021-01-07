@@ -8,17 +8,17 @@ const Item = (props) => {
       <NavLink exact
         activeClassName={ styles.activeLink }
         to={ `/dialogs/id${props.id}` }
-      >User_{ props.id }</NavLink>
+      >{ props.name }</NavLink>
     </li>
   );
 };
 
 const itemArr = [];
 for(let i = 1; i <= 3; ++i) {
-  itemArr.push(<Item id={ i }/>);
+  itemArr.push(<Item id={ i } name={ `User_${i}` }/>);
 }
 
-function DialogsList() {
+const DialogsList = () => {
   return (
     <section className={ styles.dialogSection }>
       <div className={ styles.title }><NavLink to='/dialogs'>Dialogs</NavLink></div>

@@ -3,7 +3,7 @@ import styles from './index.module.css';
 import art from './art.jpg';
 import MyPosts from './MyPosts';
 
-function Profile() {
+const Profile = () => {
   return (
     <div className={ styles.profile }>
     

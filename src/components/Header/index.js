@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import styles from './index.module.css';
 import logo from './katana.svg';
 
-function Header() {
+const Header = () => {
   return (
     <div className={ styles.headerInnerWrapper }>
       <div className={ styles.headerContent }>

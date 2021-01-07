@@ -4,7 +4,7 @@ import Messages from './Messages';
 import DialogsList from './DialogsList';
 
 
-function Dialogs() {
+const Dialogs = () => {
   return (
     <div className={ styles.dialogsPage }>
       <DialogsList />

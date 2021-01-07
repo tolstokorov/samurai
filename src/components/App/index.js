@@ -20,7 +20,7 @@ const Stub = () => <div style={ stubStyles }>Stub</div>;
 const Error404 = () => <div style={ { ...stubStyles, backgroundColor: 'darkorange' } }>404</div>;
 
 
-function App() {
+const App = () => {
   return (
     <div className={ styles.grid }>
 

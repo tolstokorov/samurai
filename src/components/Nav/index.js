@@ -8,7 +8,7 @@ const ProfileNavLink = (props) => {
   );
 };
 
-function Nav() {
+const Nav = () => {
   return (
     <div className={ styles.navInner }>
 

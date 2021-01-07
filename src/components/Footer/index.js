@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './index.module.css';
 
-function Footer() {
+const Footer = () => {
   return (
     <div className={ styles.footerInnerWrapper }>
       <div className={ styles.footerContent }>

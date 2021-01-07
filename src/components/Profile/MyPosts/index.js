@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 import Post from "./Post";
 import AddPost from "./AddPost";
 
-function MyPosts(props) {
+const MyPosts = (props) => {
   // const postArr = [];
   // for(let i = 1; i <= 10; ++i) {
   //   postArr.push(<Post key={ i } n={ i } />);
