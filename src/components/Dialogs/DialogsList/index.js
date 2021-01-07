@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Route, Switch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from './index.module.css';
 
 const Item = (props) => {
@@ -13,17 +13,23 @@ const Item = (props) => {
   );
 };
 
-const itemArr = [];
-for(let i = 1; i <= 3; ++i) {
-  itemArr.push(<Item id={ i } name={ `User_${i}` }/>);
-}
+
+// stub
+  const itemArr = [];
+  for(let i = 1; i <= 5; ++i) {
+    itemArr.push({
+      id: i,
+      name: `User_${i}`
+    });
+  }
+// end stub
 
 const DialogsList = () => {
   return (
     <section className={ styles.dialogSection }>
       <div className={ styles.title }><NavLink to='/dialogs'>Dialogs</NavLink></div>
       <ol className={ styles.list }>
-        { itemArr }
+        { itemArr.map(item => <Item key={ item.id } id={ item.id } name={ item.name }/>) }
       </ol>
     </section>
   );

@@ -2,46 +2,39 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import styles from './index.module.css';
 
+const Message = (props) => <li className={ styles.item } >{ props.message }</li>;
+
+  
+
+// stub
+  const itemArr = [];
+  for(let i = 1; i <= 5; ++i) {
+    const innerArr = [];
+    
+    for(let j = 1; j <= 3; ++j) {
+      innerArr.push(
+        <Message key={ j } message={ `Stub :) ${(Math.random() * 1e8)^0}` } />
+      );
+    }
+
+    itemArr.push(
+      <Route key={ i } exact path={ `/dialogs/id${i}` } >
+        <ul className={ styles.list } >
+          { innerArr }
+        </ul>
+      </Route>
+    );
+  }
+// end stub
+
 const Messages = (props) => {
+
   return (
     <section className={ styles.messages }>
-      {/* todo: rewrite copypaste */}
       <Switch>
-        <Route exact path='/dialogs/id1' >
-          <ul className={ styles.list } >
-            <li className={ styles.item } > Message_1 Lorem ipsum.</li>
-            <li className={ styles.item } > Message_2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi qui nulla repellendus, beatae ab illum iste doloribus itaque dignissimos blanditiis veritatis quae libero officia accusamus voluptatibus. Ipsum ipsa in vero!</li>
-            <li className={ styles.item } > Message_3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-            <li className={ styles.item } > Message_4 L!</li>
-            <li className={ styles.item } > Message_5 Lorem, ipsum dolor.</li>
-          </ul>
-        </Route>
-        <Route exact path='/dialogs/id2' >
-          <ul className={ styles.list } >
-            <li className={ styles.item } > Message_1 Lorem ipsum dolor sit amet.</li>
-            <li className={ styles.item } > Message_2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi qui nulla repellendus, beatae ab illum iste doloribus itaque dignissimos blanditiis veritatis quae libero officia accusamus voluptatibus. Ipsum ipsa in vero!</li>
-            <li className={ styles.item } > Message_3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-            <li className={ styles.item } > Message_4 </li>
-            <li className={ styles.item } > Message_5 Lorem, ipsum dolor.</li><li className={ styles.item } > Message_1 Lorem ipsum dolor sit amet.</li>
-            <li className={ styles.item } > Message_2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi qui nulla repellendus, beatae ab illum iste doloribus itaque dignissimos blanditiis veritatis quae libero officia accusamus voluptatibus. Ipsum ipsa in vero!</li>
-            <li className={ styles.item } > Message_3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-            <li className={ styles.item } > Message_4 </li>
-            <li className={ styles.item } > Message_5 Lorem, ipsum dolor.</li><li className={ styles.item } > Message_1 Lorem ipsum dolor sit amet.</li>
-            <li className={ styles.item } > Message_2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi qui nulla repellendus, beatae ab illum iste doloribus itaque dignissimos blanditiis veritatis quae libero officia accusamus voluptatibus. Ipsum ipsa in vero!</li>
-            <li className={ styles.item } > Message_3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-            <li className={ styles.item } > Message_4 </li>
-            <li className={ styles.item } > Message_5 Lorem, ipsum dolor.</li><li className={ styles.item } > Message_1 Lorem ipsum dolor sit amet.</li>
-            <li className={ styles.item } > Message_2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi qui nulla repellendus, beatae ab illum iste doloribus itaque dignissimos blanditiis veritatis quae libero officia accusamus voluptatibus. Ipsum ipsa in vero!</li>
-            <li className={ styles.item } > Message_3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-            <li className={ styles.item } > Message_4 </li>
-            <li className={ styles.item } > Message_5 Lorem, ipsum dolor.</li>
-          </ul>
-        </Route>
-        <Route exact path='/dialogs/id3' >
-          <ul className={ styles.list } >
-            <li className={ styles.item } > Message_1 Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
-          </ul>
-        </Route>
+        
+        { itemArr }
+       
         <Route path='/dialogs' >
           <div style={{
             height: '100%',
@@ -53,6 +46,7 @@ const Messages = (props) => {
             <div>~</div>
           </div>
         </Route>
+
       </Switch>
     </section>
   );
