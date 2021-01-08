@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import styles from './index.module.css';
 
-const Message = (props) => <li className={ styles.item } >{ props.message }</li>;
+const Message = (props) => <li className={ props.itIsMe ? styles.myItem : styles.friendItem } >{ props.message }</li>;
 
 const Messages = (props) => {
 
@@ -11,7 +11,7 @@ const Messages = (props) => {
       <Route key={ route.id } exact path={ `/dialogs/id${route.id}` } >
         <ul className={ styles.list } >
           { route.messages.map(item => <Message
-          key={ item.id } message={ item.message } />) }
+          key={ item.id } message={ item.message } itIsMe={ item.sender_id === props.owner.id }/>) }
         </ul>
       </Route>
     );

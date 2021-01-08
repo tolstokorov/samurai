@@ -7,7 +7,7 @@ const Dialogs = (props) => {
   return (
     <div className={ styles.dialogsPage }>
       <DialogsList dialogs={ props.dialogs } />
-      <Messages messages={ props.messages } />
+      <Messages messages={ props.messages } owner={ props.owner }/>
     </div>
   );
 }

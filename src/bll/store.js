@@ -1,20 +1,20 @@
 const state = {
+    owner: {
+        id: 42
+    },
     posts: [
         {
             id: 0,
-            name: 'Alexander',
             message: 'blah-blah-blah-blah-blah-blah-blah',
             likesCount: 24
         },
         {
             id: 1,
-            name: 'James',
             message: 'blah-blah-blah',
             likesCount: 42
         },
         {
             id: 2,
-            name: 'Daniel',
             message: 'blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah',
             likesCount: 0
         }
@@ -39,7 +39,8 @@ const state = {
             messages: [
                 {
                     id: 0,
-                    message: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+                    message: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+                    sender_id: 123456
                 }
             ]
         },
@@ -48,11 +49,13 @@ const state = {
             messages: [
                 {
                     id: 0,
-                    message: 'Porro facere explicabo id illum tempore nobis nisi obcaecati voluptatibus quidem exercitationem amet labore'
+                    message: 'Porro facere explicabo id illum tempore nobis nisi obcaecati voluptatibus quidem exercitationem amet labore',
+                    sender_id: 43534534534
                 },
                 {
                     id: 1,
-                    message: 'Ipsa minus natus quasi perspiciatis ipsam debitis nam.'
+                    message: 'Ipsa minus natus quasi perspiciatis ipsam debitis nam.',
+                    sender_id: 42
                 }
             ]
         },
@@ -61,15 +64,18 @@ const state = {
             messages: [
                 {
                     id: 0,
-                    message: 'Dicta.'
+                    message: 'Dicta.',
+                    sender_id: 26734232
                 },
                 {
                     id: 1,
-                    message: 'Consectetur amet omnis delectus quia in!'
+                    message: 'Consectetur amet omnis delectus quia in!',
+                    sender_id: 42
                 },
                 {
                     id: 2,
-                    message: 'Maxime vel voluptates nemo, autem iusto alias nam?'
+                    message: 'Maxime vel voluptates nemo, autem iusto alias nam?',
+                    sender_id: 26734232
                 }
             ]
         }

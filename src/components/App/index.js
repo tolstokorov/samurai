@@ -25,7 +25,9 @@ const App = (props) => {
   posts={ props.posts } />;
 
   const dialogs = routeProps => <Dialogs { ...routeProps }
-  dialogs={ props.dialogs } messages={ props.messages } />;
+  dialogs={ props.dialogs }
+  messages={ props.messages }
+  owner={ props.owner }  />;
 
   return (
     <div className={ styles.grid }>

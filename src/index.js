@@ -12,6 +12,7 @@ ReactDOM.render(
         posts={ state.posts }
         messages={ state.messages }
         dialogs={ state.dialogs }
+        owner={ state.owner }
       />
     </BrowserRouter>
   </React.StrictMode>,
