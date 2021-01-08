@@ -3,13 +3,13 @@ import styles from './index.module.css';
 import MyPosts from './MyPosts';
 import ProfileInfo from "./ProfileInfo";
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <div className={ styles.profile }>
 
-      <ProfileInfo />
+      <ProfileInfo/>
       
-      <MyPosts />
+      <MyPosts posts={ props.posts } />
 
     </div>
   );

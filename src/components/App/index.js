@@ -19,8 +19,10 @@ const stubStyles = {
 const Stub = () => <div style={ stubStyles }>Stub</div>;
 const Error404 = () => <div style={ { ...stubStyles, backgroundColor: 'darkorange' } }>404</div>;
 
+const App = (props) => {
 
-const App = () => {
+  const profile = routeProps => <Profile { ...routeProps } posts={ props.posts } />;
+
   return (
     <div className={ styles.grid }>
 
@@ -33,8 +35,8 @@ const App = () => {
 
           <main className={ styles.main }>
             <Switch>
-              <Route exact path='/' component={ Profile } />
-              <Route path='/profile' component={ Profile } />
+              <Route exact path='/' render={ profile } />
+              <Route path='/profile' render={ profile } />
               
               <Route path='/dialogs' component={ Dialogs } />
 

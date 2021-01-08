@@ -5,9 +5,13 @@ import default_ava from './default_ava.png';
 const Post = (props) => {
   return (
     <div className={ styles.post }>
+
       <img className={ styles.avatar } src={ default_ava } alt="avatar"/>
+
       <div className={ styles.body }>
+
         <span>Post №{ props.id }</span>&nbsp;
+      
         <span className={ styles.likeBox }>
           <button>Like</button>
           <span>{ props.likesCount }</span>
@@ -16,6 +20,7 @@ const Post = (props) => {
         <p>{ props.message }</p>
         
       </div>
+
     </div>
   );
 }

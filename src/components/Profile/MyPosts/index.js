@@ -3,33 +3,25 @@ import styles from "./index.module.css";
 import Post from "./Post";
 import AddPost from "./AddPost";
 
-// stub
-  const postArr = [];
-  
-  for(let i = 1; i <= 5; ++i) {
-    postArr.push({
-      id: i,
-      name: `User_${i}`,
-      message: 'blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-\
-      blah-blah-blah-blah-blah-blah-blah-blah',
-      likesCount: 42
-    });
-  }
-// end stub
-
 const MyPosts = (props) => {
+
+  const postElements =  props.posts.map( (item) => {
     return (
+      <Post
+        key={ item.id }
+        id={ item.id}
+        message={ item.message }
+        likesCount={ item.likesCount }
+      /> 
+    );
+  });
+
+  return (
     <div className={ styles.rootWrapper }>
       <div className={ styles.title }>My posts</div>
 
       <div className={ styles.posts }>
-        { postArr.map( (item) => <Post
-         key={ item.id }
-         id={ item.id}
-         message={ item.message }
-         likesCount={ item.likesCount }
-
-         /> ) }
+        { postElements }
       </div>
 
       <AddPost />

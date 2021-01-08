@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './index.module.css';
 
-const addPost = (props) => {
+const addPost = () => {
   return (
     <form className={ styles.form }>
       <div className={ styles.box }>
