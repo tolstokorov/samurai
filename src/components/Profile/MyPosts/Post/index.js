@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './index.module.css';
-import default_ava from './default_ava.png';
+import default_ava from '../../../../share/default_ava.png';
 
 const Post = (props) => {
   return (

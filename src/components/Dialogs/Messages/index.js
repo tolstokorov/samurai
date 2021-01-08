@@ -11,7 +11,7 @@ const Messages = (props) => {
       <Route key={ route.id } exact path={ `/dialogs/id${route.id}` } >
         <ul className={ styles.list } >
           { route.messages.map(item => <Message
-          key={ item.id } message={ 'ID-' + route.id + ': ' + item.message } />) }
+          key={ item.id } message={ item.message } />) }
         </ul>
       </Route>
     );

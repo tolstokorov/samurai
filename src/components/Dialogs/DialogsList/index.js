@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from './index.module.css';
+import default_ava from '../../../share/default_ava.png';
 
 const Item = (props) => {
   return (
     <li className={ styles.item }>
+      <img className={ styles.avatar } src={ default_ava } alt="avatar"/>
       <NavLink exact
         activeClassName={ styles.activeLink }
         to={ `/dialogs/id${props.id}` }
@@ -20,9 +22,9 @@ const DialogsList = (props) => {
   return (
     <section className={ styles.dialogSection }>
       <div className={ styles.title }><NavLink to='/dialogs'>Dialogs</NavLink></div>
-      <ol className={ styles.list }>
+      <ul className={ styles.list }>
         { dialogs }
-      </ol>
+      </ul>
     </section>
   );
 }
