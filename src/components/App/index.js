@@ -22,6 +22,7 @@ const Error404 = () => <div style={ { ...stubStyles, backgroundColor: 'darkorang
 const App = (props) => {
 
   const profile = routeProps => <Profile { ...routeProps } posts={ props.posts } />;
+  const dialogs = routeProps => <Dialogs { ...routeProps } messages={ props.messages } />;
 
   return (
     <div className={ styles.grid }>
@@ -38,7 +39,7 @@ const App = (props) => {
               <Route exact path='/' render={ profile } />
               <Route path='/profile' render={ profile } />
               
-              <Route path='/dialogs' component={ Dialogs } />
+              <Route path='/dialogs' render={ dialogs } />
 
               <Route path='/news' component={ Stub } />
               <Route path='/music' component={ Stub } />

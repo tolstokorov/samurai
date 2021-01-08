@@ -3,12 +3,11 @@ import styles from './index.module.css';
 import Messages from './Messages';
 import DialogsList from './DialogsList';
 
-
-const Dialogs = () => {
+const Dialogs = (props) => {
   return (
     <div className={ styles.dialogsPage }>
       <DialogsList />
-      <Messages />
+      <Messages messages={ props.messages } />
     </div>
   );
 }

@@ -6,7 +6,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 // stub
 const posts = [];
-  
 for(let i = 1; i <= 5; ++i) {
   posts.push({
     id: i,
@@ -16,6 +15,23 @@ for(let i = 1; i <= 5; ++i) {
     likesCount: 42
   });
 }
+
+const messages = [];
+const messagesTmpArr = [];
+for(let i = 1; i <= 3; ++i) {
+  messagesTmpArr.push({
+    id: i,
+    message: '--- This is Stub :) ---'
+  });
+}
+for(let i = 1; i <= 5; ++i) {
+  messages.push(
+    {
+      id: i,
+      messages: messagesTmpArr
+    }
+  );
+}
 // end stub
 
 ReactDOM.render(
@@ -23,6 +39,7 @@ ReactDOM.render(
     <BrowserRouter basename={ process.env.PUBLIC_URL }>
       <App
         posts={ posts }
+        messages={ messages }
       />
     </BrowserRouter>
   </React.StrictMode>,
