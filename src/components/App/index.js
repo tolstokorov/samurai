@@ -23,7 +23,7 @@ const App = (props) => {
 
   const profile = routeProps => <Profile { ...routeProps }
   posts={ props.posts } />;
-  
+
   const dialogs = routeProps => <Dialogs { ...routeProps }
   dialogs={ props.dialogs } messages={ props.messages } />;
 
@@ -39,10 +39,16 @@ const App = (props) => {
 
           <main className={ styles.main }>
             <Switch>
-              <Route exact path='/' render={ profile } />
-              <Route path='/profile' render={ profile } />
+              <Route exact path='/'>
+                { profile }
+              </Route>
+              <Route path='/profile'>
+                { profile }
+              </Route>
               
-              <Route path='/dialogs' render={ dialogs } />
+              <Route path='/dialogs'>
+                { dialogs }
+              </Route>
 
               <Route path='/news' component={ Stub } />
               <Route path='/music' component={ Stub } />
