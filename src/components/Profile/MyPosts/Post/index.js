@@ -10,7 +10,7 @@ const Post = (props) => {
 
       <div className={ styles.body }>
 
-        <span>Post №{ props.id }</span>&nbsp;
+        <span>Post №{ props.id + 1 }</span>&nbsp;
       
         <span className={ styles.likeBox }>
           <button>Like</button>
