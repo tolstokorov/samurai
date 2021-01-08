@@ -13,23 +13,15 @@ const Item = (props) => {
   );
 };
 
-// stub
-  const dialogsData = [];
-  
-  for(let i = 1; i <= 5; ++i) {
-    dialogsData.push({
-      id: i,
-      name: `User_${i}`
-    });
-  }
-// end stub
+const DialogsList = (props) => {
 
-const DialogsList = () => {
+  const dialogs = props.dialogs.map(item => <Item key={ item.id } id={ item.id } name={ item.name }/>);
+
   return (
     <section className={ styles.dialogSection }>
       <div className={ styles.title }><NavLink to='/dialogs'>Dialogs</NavLink></div>
       <ol className={ styles.list }>
-        { dialogsData.map(item => <Item key={ item.id } id={ item.id } name={ item.name }/>) }
+        { dialogs }
       </ol>
     </section>
   );

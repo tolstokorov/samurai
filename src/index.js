@@ -16,6 +16,15 @@ for(let i = 1; i <= 5; ++i) {
   });
 }
 
+const dialogs = [];
+  
+for(let i = 1; i <= 5; ++i) {
+  dialogs.push({
+    id: i,
+    name: `User_${i}`
+  });
+}
+
 const messages = [];
 const messagesTmpArr = [];
 for(let i = 1; i <= 3; ++i) {
@@ -40,6 +49,7 @@ ReactDOM.render(
       <App
         posts={ posts }
         messages={ messages }
+        dialogs={ dialogs }
       />
     </BrowserRouter>
   </React.StrictMode>,

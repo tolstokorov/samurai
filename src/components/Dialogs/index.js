@@ -6,7 +6,7 @@ import DialogsList from './DialogsList';
 const Dialogs = (props) => {
   return (
     <div className={ styles.dialogsPage }>
-      <DialogsList />
+      <DialogsList dialogs={ props.dialogs } />
       <Messages messages={ props.messages } />
     </div>
   );

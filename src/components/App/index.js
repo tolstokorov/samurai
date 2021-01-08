@@ -21,8 +21,11 @@ const Error404 = () => <div style={ { ...stubStyles, backgroundColor: 'darkorang
 
 const App = (props) => {
 
-  const profile = routeProps => <Profile { ...routeProps } posts={ props.posts } />;
-  const dialogs = routeProps => <Dialogs { ...routeProps } messages={ props.messages } />;
+  const profile = routeProps => <Profile { ...routeProps }
+  posts={ props.posts } />;
+  
+  const dialogs = routeProps => <Dialogs { ...routeProps }
+  dialogs={ props.dialogs } messages={ props.messages } />;
 
   return (
     <div className={ styles.grid }>
