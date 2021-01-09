@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import AddMessage from "./AddMessage";
 import styles from './index.module.css';
 
 const Message = (props) => <li className={ props.itIsMe ? styles.myItem : styles.friendItem } >{ props.message }</li>;
@@ -13,7 +14,9 @@ const Messages = (props) => {
           { route.messages.map(item => <Message
           key={ item.id } message={ item.message } itIsMe={ item.sender_id === props.owner.id }/>) }
         </ul>
+        <AddMessage />
       </Route>
+      
     );
   });
 

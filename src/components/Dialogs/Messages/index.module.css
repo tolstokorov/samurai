@@ -5,9 +5,17 @@
 
     /* tmp */
     background-color: lightblue;
+
+    display: grid;
+    grid-template:
+    'list' 1fr
+    'form' 100px
+    / 1fr
 }
 
 .list {
+    grid-area: list;
+
     list-style: none;
 
     margin: 30px;

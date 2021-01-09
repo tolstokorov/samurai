@@ -1,0 +1,16 @@
+.form {
+    grid-area: form;
+
+    display: grid;
+    grid-template:
+    'textarea btn' 1fr
+    /1fr 100px;
+}
+
+.textarea {
+    grid-area: textarea;
+}
+
+.btn {
+    grid-area: btn;
+}
