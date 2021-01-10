@@ -17,7 +17,7 @@ const AddMessage = (props) => {
       <button
         onClick={ () => {
           setTmpText('');
-          console.log(`New message: \n${ tmpText }`);
+          alert(`New message: \n${ tmpText }`);
         } }
       >Add message</button>
     </form>

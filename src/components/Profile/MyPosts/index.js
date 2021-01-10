@@ -5,7 +5,7 @@ import AddPost from "./AddPost";
 
 const MyPosts = (props) => {
 
-  const postElements =  props.posts.map( (item) => {
+  const postElements =  props.state.posts.map( (item) => {
     return (
       <Post
         key={ item.id }
@@ -24,7 +24,10 @@ const MyPosts = (props) => {
         { postElements }
       </div>
 
-      <AddPost />
+      <AddPost
+        newPostText={ props.state.newPostText }
+        setNewPostText={ props.setNewPostText }
+        addPost={ props.addPost } />
     </div>
   );
 }
