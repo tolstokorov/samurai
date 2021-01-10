@@ -137,14 +137,16 @@ class Store {
     };
 
     addMessage = (routeId) => {
-        this._state.dialogsPage.messages[routeId].messages.push({
-            id: this._state.dialogsPage.messages[routeId].messages.length,
-            message: this._state.dialogsPage.messages[routeId].tmpText,
-            sender_id: this._state.owner.id
-        });
-        this._state.dialogsPage.messages[routeId].tmpText = '';
-    
-        this._render();
+        if(this._state.dialogsPage.messages[routeId].tmpText.trim()) {
+            this._state.dialogsPage.messages[routeId].messages.push({
+                id: this._state.dialogsPage.messages[routeId].messages.length,
+                message: this._state.dialogsPage.messages[routeId].tmpText,
+                sender_id: this._state.owner.id
+            });
+            this._state.dialogsPage.messages[routeId].tmpText = '';
+        
+            this._render();
+        }
     };
     setTmpText = (routeId, message) => {
         this._state.dialogsPage.messages[routeId].tmpText = message;
