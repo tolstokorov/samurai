@@ -10,7 +10,7 @@ const Profile = (props) => {
       <ProfileInfo/>
       
       <MyPosts
-        state={ props.state }
+        profilePage={ props.profilePage }
         setNewPostText={ props.setNewPostText }
         addPost={ props.addPost } />
 
