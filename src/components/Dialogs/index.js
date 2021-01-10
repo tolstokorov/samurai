@@ -9,8 +9,7 @@ const Dialogs = (props) => {
       <DialogsList
         dialogs={ props.dialogsPage.dialogs } />
       <Messages
-        setTmpText={ props.setTmpText }
-        addMessage={ props.addMessage }
+        dispatch={ props.dispatch }
         messages={ props.dialogsPage.messages }
         owner={ props.owner }/>
     </div>

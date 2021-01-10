@@ -17,8 +17,7 @@ const Messages = (props) => {
         <AddMessage
           routeId={ route.id }
           tmpText={ route.tmpText }
-          setTmpText={ props.setTmpText }
-          addMessage={ props.addMessage }
+          dispatch={ props.dispatch }
         />
       </Route>
       

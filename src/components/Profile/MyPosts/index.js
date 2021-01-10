@@ -26,8 +26,7 @@ const MyPosts = (props) => {
 
       <AddPost
         newPostText={ props.profilePage.newPostText }
-        setNewPostText={ props.setNewPostText }
-        addPost={ props.addPost } />
+        dispatch={ props.dispatch } />
     </div>
   );
 }

@@ -23,13 +23,12 @@ const App = (props) => {
 
   const profile = routeProps => <Profile { ...routeProps }
   profilePage={ props.store.setState().profilePage }
-  setNewPostText={ props.store.setNewPostText }
-  addPost={ props.store.addPost } />;
+  dispatch={ props.store.dispatch }
+  addPost={ props.store.dispatch } />;
 
   const dialogs = routeProps => <Dialogs { ...routeProps }
   dialogsPage={ props.store.setState().dialogsPage }
-  setTmpText={ props.store.setTmpText }
-  addMessage={ props.store.addMessage }
+  dispatch={ props.store.dispatch }
   owner={ props.store.setState().owner } />;
 
   return (

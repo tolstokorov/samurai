@@ -97,6 +97,25 @@ class Store {
         this._render = observer;
     };
 
+    dispatch = (action) => {
+        switch (action.type) {
+            case 'ADD-POST':
+                this.addPost();
+                break;
+            case 'SET-NEW-POST-TEXT':
+                this.setNewPostText(action.payload.text);
+                break;
+            case 'ADD-MESSAGE':
+                this.addMessage(action.payload.routeId);
+                break;
+            case 'SET-TMP-TEXT':
+                this.setTmpText(action.payload.routeId, action.payload.message);
+                break;
+        
+            default:
+                break;
+        }
+    };
 
     addPost = () => {
         const newPost = {

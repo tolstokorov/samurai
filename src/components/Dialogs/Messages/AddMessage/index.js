@@ -10,11 +10,22 @@ const AddMessage = (props) => {
       <textarea
         ref={ messageArea }
         value={ props.tmpText }
-        onChange={ () => props.setTmpText(props.routeId, messageArea.current.value) }
+        onChange={ () => props.dispatch({
+          type: 'SET-TMP-TEXT',
+          payload: {
+            routeId: props.routeId,
+            message: messageArea.current.value
+          }
+        }) }
       ></textarea>
       <button
         onClick={ () => {
-          props.addMessage(props.routeId);
+          props.dispatch({
+            type: 'ADD-MESSAGE',
+            payload: {
+              routeId: props.routeId
+            }
+          });
         } }
       >Add message</button>
     </form>
