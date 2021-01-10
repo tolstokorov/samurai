@@ -94,7 +94,7 @@ class Store {
     setState = () => this._state;
 
     subscriber = (observer) => {
-        this._renderRoot = observer;
+        this._render = observer;
     };
 
 
@@ -107,12 +107,12 @@ class Store {
         this._state.profilePage.posts.push(newPost);
         this.setNewPostText('');
     
-        this._renderRoot();
+        this._render();
     };
     setNewPostText = (text) => {
         this._state.profilePage.newPostText = text;
     
-        this._renderRoot();
+        this._render();
     };
 
     addMessage = (routeId) => {
@@ -123,12 +123,12 @@ class Store {
         });
         this._state.dialogsPage.messages[routeId].tmpText = '';
     
-        this._renderRoot();
+        this._render();
     };
     setTmpText = (routeId, message) => {
         this._state.dialogsPage.messages[routeId].tmpText = message;
     
-        this._renderRoot();
+        this._render();
     };
 };
 const store = new Store();
