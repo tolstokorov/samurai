@@ -1,4 +1,5 @@
 import React from "react";
+import { addMessage, setTmpText } from "../../../../bll/store";
 import styles from './index.module.css';
 
 const AddMessage = (props) => {
@@ -10,22 +11,11 @@ const AddMessage = (props) => {
       <textarea
         ref={ messageArea }
         value={ props.tmpText }
-        onChange={ () => props.dispatch({
-          type: 'SET-TMP-TEXT',
-          payload: {
-            routeId: props.routeId,
-            message: messageArea.current.value
-          }
-        }) }
+        onChange={ () => props.dispatch(setTmpText(props.routeId, messageArea.current.value)) }
       ></textarea>
       <button
         onClick={ () => {
-          props.dispatch({
-            type: 'ADD-MESSAGE',
-            payload: {
-              routeId: props.routeId
-            }
-          });
+          props.dispatch(addMessage(props.routeId));
         } }
       >Add message</button>
     </form>

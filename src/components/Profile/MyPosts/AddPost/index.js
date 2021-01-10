@@ -1,4 +1,5 @@
 import React from "react";
+import { addPost, setNewPostText } from "../../../../bll/store";
 import styles from './index.module.css';
 
 const AddPost = (props) => {
@@ -12,22 +13,11 @@ const AddPost = (props) => {
           className={ styles.textarea }
           value={ props.newPostText }
           ref={ newPostArea }
-          onChange={ () => {
-            props.dispatch({
-              type: 'SET-NEW-POST-TEXT',
-              payload: {
-                text: newPostArea.current.value
-              }
-            });
-          }}
+          onChange={ () => props.dispatch(setNewPostText(newPostArea.current.value)) }
         ></textarea>
         <button
           className={ styles.btn }
-          onClick={ () => {
-            props.dispatch({
-              type: 'ADD-POST'
-            });
-          } }
+          onClick={ () => props.dispatch(addPost()) }
         >Add post</button>
       </div>
     </form>

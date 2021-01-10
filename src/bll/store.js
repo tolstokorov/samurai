@@ -1,3 +1,34 @@
+const ADD_POST = 'ADD-POST';
+const SET_NEW_POST_TEXT = 'SET-NEW-POST-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const SET_TMP_TEXT = 'SET-TMP-TEXT';
+
+export const setNewPostText = (text) => ({
+    type: SET_NEW_POST_TEXT,
+    payload: {
+        text
+    }
+});
+  
+export const addPost = () => ({ type: ADD_POST });
+
+export const setTmpText = (routeId, message) => ({
+    type: SET_TMP_TEXT,
+    payload: {
+        routeId,
+        message
+    }
+});
+  
+export const addMessage = (routeId) => ({
+    type: ADD_MESSAGE,
+    payload: {
+        routeId
+    }
+});
+
+
+
 class Store {
     _state = {
         owner: {
@@ -99,16 +130,16 @@ class Store {
 
     dispatch = (action) => {
         switch (action.type) {
-            case 'ADD-POST':
+            case ADD_POST:
                 this._addPost();
                 break;
-            case 'SET-NEW-POST-TEXT':
+            case SET_NEW_POST_TEXT:
                 this._setNewPostText(action.payload.text);
                 break;
-            case 'ADD-MESSAGE':
+            case ADD_MESSAGE:
                 this._addMessage(action.payload.routeId);
                 break;
-            case 'SET-TMP-TEXT':
+            case SET_TMP_TEXT:
                 this._setTmpText(action.payload.routeId, action.payload.message);
                 break;
         
@@ -135,7 +166,6 @@ class Store {
     
         this._render();
     };
-
     _addMessage = (routeId) => {
         if(this._state.dialogsPage.messages[routeId].tmpText.trim()) {
             this._state.dialogsPage.messages[routeId].messages.push({
