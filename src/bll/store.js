@@ -100,16 +100,16 @@ class Store {
     dispatch = (action) => {
         switch (action.type) {
             case 'ADD-POST':
-                this.addPost();
+                this._addPost();
                 break;
             case 'SET-NEW-POST-TEXT':
-                this.setNewPostText(action.payload.text);
+                this._setNewPostText(action.payload.text);
                 break;
             case 'ADD-MESSAGE':
-                this.addMessage(action.payload.routeId);
+                this._addMessage(action.payload.routeId);
                 break;
             case 'SET-TMP-TEXT':
-                this.setTmpText(action.payload.routeId, action.payload.message);
+                this._setTmpText(action.payload.routeId, action.payload.message);
                 break;
         
             default:
@@ -117,7 +117,7 @@ class Store {
         }
     };
 
-    addPost = () => {
+    _addPost = () => {
         if(this._state.profilePage.newPostText.trim()) {
             const newPost = {
                 id: this._state.profilePage.posts.length,
@@ -125,30 +125,30 @@ class Store {
                 likesCount: 0
             };
             this._state.profilePage.posts.push(newPost);
-            this.setNewPostText('');
+            this._setNewPostText('');
         
             this._render();
         }
     };
-    setNewPostText = (text) => {
+    _setNewPostText = (text) => {
         this._state.profilePage.newPostText = text;
     
         this._render();
     };
 
-    addMessage = (routeId) => {
+    _addMessage = (routeId) => {
         if(this._state.dialogsPage.messages[routeId].tmpText.trim()) {
             this._state.dialogsPage.messages[routeId].messages.push({
                 id: this._state.dialogsPage.messages[routeId].messages.length,
                 message: this._state.dialogsPage.messages[routeId].tmpText,
                 sender_id: this._state.owner.id
             });
-            this._state.dialogsPage.messages[routeId].tmpText = '';
+            this._setTmpText(routeId,'');
         
             this._render();
         }
     };
-    setTmpText = (routeId, message) => {
+    _setTmpText = (routeId, message) => {
         this._state.dialogsPage.messages[routeId].tmpText = message;
     
         this._render();
