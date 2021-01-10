@@ -1,5 +1,5 @@
 class Store {
-    state = {
+    _state = {
         owner: {
             id: 42
         },
@@ -91,6 +91,8 @@ class Store {
         }
     };
 
+    setState = () => this._state;
+
     subscriber = (observer) => {
         this._renderRoot = observer;
     };
@@ -98,33 +100,33 @@ class Store {
 
     addPost = () => {
         const newPost = {
-            id: this.state.profilePage.posts.length,
-            message: this.state.profilePage.newPostText,
+            id: this._state.profilePage.posts.length,
+            message: this._state.profilePage.newPostText,
             likesCount: 0
         };
-        this.state.profilePage.posts.push(newPost);
+        this._state.profilePage.posts.push(newPost);
         this.setNewPostText('');
     
         this._renderRoot();
     };
     setNewPostText = (text) => {
-        this.state.profilePage.newPostText = text;
+        this._state.profilePage.newPostText = text;
     
         this._renderRoot();
     };
 
     addMessage = (routeId) => {
-        this.state.dialogsPage.messages[routeId].messages.push({
-            id: this.state.dialogsPage.messages[routeId].messages.length,
-            message: this.state.dialogsPage.messages[routeId].tmpText,
-            sender_id: this.state.owner.id
+        this._state.dialogsPage.messages[routeId].messages.push({
+            id: this._state.dialogsPage.messages[routeId].messages.length,
+            message: this._state.dialogsPage.messages[routeId].tmpText,
+            sender_id: this._state.owner.id
         });
-        this.state.dialogsPage.messages[routeId].tmpText = '';
+        this._state.dialogsPage.messages[routeId].tmpText = '';
     
         this._renderRoot();
     };
     setTmpText = (routeId, message) => {
-        this.state.dialogsPage.messages[routeId].tmpText = message;
+        this._state.dialogsPage.messages[routeId].tmpText = message;
     
         this._renderRoot();
     };

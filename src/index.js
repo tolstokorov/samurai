@@ -5,8 +5,6 @@ import App from './components/App';
 import { BrowserRouter } from 'react-router-dom';
 import store from './bll/store';
 
-window.messages = store.state.dialogsPage.messages;
-
 const renderRoot = () => {
 ReactDOM.render(
   <React.StrictMode>

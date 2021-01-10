@@ -22,15 +22,15 @@ const Error404 = () => <div style={ { ...stubStyles, backgroundColor: 'darkorang
 const App = (props) => {
 
   const profile = routeProps => <Profile { ...routeProps }
-  profilePage={ props.store.state.profilePage }
+  profilePage={ props.store.setState().profilePage }
   setNewPostText={ props.store.setNewPostText }
   addPost={ props.store.addPost } />;
 
   const dialogs = routeProps => <Dialogs { ...routeProps }
-  dialogsPage={ props.store.state.dialogsPage }
+  dialogsPage={ props.store.setState().dialogsPage }
   setTmpText={ props.store.setTmpText }
   addMessage={ props.store.addMessage }
-  owner={ props.store.state.owner } />;
+  owner={ props.store.setState().owner } />;
 
   return (
     <div className={ styles.grid }>
