@@ -118,15 +118,17 @@ class Store {
     };
 
     addPost = () => {
-        const newPost = {
-            id: this._state.profilePage.posts.length,
-            message: this._state.profilePage.newPostText,
-            likesCount: 0
-        };
-        this._state.profilePage.posts.push(newPost);
-        this.setNewPostText('');
-    
-        this._render();
+        if(this._state.profilePage.newPostText.trim()) {
+            const newPost = {
+                id: this._state.profilePage.posts.length,
+                message: this._state.profilePage.newPostText,
+                likesCount: 0
+            };
+            this._state.profilePage.posts.push(newPost);
+            this.setNewPostText('');
+        
+            this._render();
+        }
     };
     setNewPostText = (text) => {
         this._state.profilePage.newPostText = text;
