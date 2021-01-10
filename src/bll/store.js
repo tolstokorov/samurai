@@ -1,5 +1,5 @@
 class Store {
-    _state = {
+    state = {
         owner: {
             id: 42
         },
@@ -40,6 +40,7 @@ class Store {
             ],
             messages: [
                 {
+                    tmpText: '',
                     id: 0,
                     messages: [
                         {
@@ -50,6 +51,7 @@ class Store {
                     ]
                 },
                 {
+                    tmpText: '',
                     id: 1,
                     messages: [
                         {
@@ -65,6 +67,7 @@ class Store {
                     ]
                 },
                 {
+                    tmpText: '',
                     id: 2,
                     messages: [
                         {
@@ -87,12 +90,6 @@ class Store {
             ]
         }
     };
-    get state() {
-        return this._state;
-    };
-    set state(newState) {
-        this._state = newState;
-    };
 
     subscriber = (observer) => {
         this._renderRoot = observer;
@@ -114,7 +111,23 @@ class Store {
         this.state.profilePage.newPostText = text;
     
         this._renderRoot();
-    }
+    };
+
+    addMessage = (routeId) => {
+        this.state.dialogsPage.messages[routeId].messages.push({
+            id: this.state.dialogsPage.messages[routeId].messages.length,
+            message: this.state.dialogsPage.messages[routeId].tmpText,
+            sender_id: this.state.owner.id
+        });
+        this.state.dialogsPage.messages[routeId].tmpText = '';
+    
+        this._renderRoot();
+    };
+    setTmpText = (routeId, message) => {
+        this.state.dialogsPage.messages[routeId].tmpText = message;
+    
+        this._renderRoot();
+    };
 };
-const store = new Store;
+const store = new Store();
 export default store;

@@ -1,23 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from './index.module.css';
 
 const AddMessage = (props) => {
 
   const messageArea = React.createRef();
 
-  const [tmpText, setTmpText] = useState('Hi!');
-
   return (
     <form onSubmit={ e => e.preventDefault() } className={ styles.form } >
       <textarea
         ref={ messageArea }
-        value={ tmpText }
-        onChange={ () => setTmpText(messageArea.current.value) }
+        value={ props.tmpText }
+        onChange={ () => props.setTmpText(props.routeId, messageArea.current.value) }
       ></textarea>
       <button
         onClick={ () => {
-          setTmpText('');
-          alert(`New message: \n${ tmpText }`);
+          props.addMessage(props.routeId);
         } }
       >Add message</button>
     </form>

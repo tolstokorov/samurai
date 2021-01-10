@@ -14,7 +14,12 @@ const Messages = (props) => {
           { route.messages.map(item => <Message
           key={ item.id } message={ item.message } itIsMe={ item.sender_id === props.owner.id }/>) }
         </ul>
-        <AddMessage />
+        <AddMessage
+          routeId={ route.id }
+          tmpText={ route.tmpText }
+          setTmpText={ props.setTmpText }
+          addMessage={ props.addMessage }
+        />
       </Route>
       
     );

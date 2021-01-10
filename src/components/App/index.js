@@ -28,6 +28,8 @@ const App = (props) => {
 
   const dialogs = routeProps => <Dialogs { ...routeProps }
   dialogsPage={ props.store.state.dialogsPage }
+  setTmpText={ props.store.setTmpText }
+  addMessage={ props.store.addMessage }
   owner={ props.store.state.owner } />;
 
   return (

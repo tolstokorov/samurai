@@ -6,8 +6,13 @@ import DialogsList from './DialogsList';
 const Dialogs = (props) => {
   return (
     <div className={ styles.dialogsPage }>
-      <DialogsList dialogs={ props.dialogsPage.dialogs } />
-      <Messages messages={ props.dialogsPage.messages } owner={ props.owner }/>
+      <DialogsList
+        dialogs={ props.dialogsPage.dialogs } />
+      <Messages
+        setTmpText={ props.setTmpText }
+        addMessage={ props.addMessage }
+        messages={ props.dialogsPage.messages }
+        owner={ props.owner }/>
     </div>
   );
 }
