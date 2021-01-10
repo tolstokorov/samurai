@@ -1,3 +1,8 @@
+let renderRoot = null;
+export const subscriber = (observer) => {
+    renderRoot = observer;
+};
+
 const state = {
     owner: {
         id: 42
@@ -97,8 +102,12 @@ export const addPost = () => {
     };
     state.profilePage.posts.push(newPost);
     setNewPostText('');
+
+    renderRoot();
 };
 
 export const setNewPostText = (text) => {
     state.profilePage.newPostText = text;
+
+    renderRoot();
 };
