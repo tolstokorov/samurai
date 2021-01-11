@@ -10,8 +10,8 @@ const Dialogs = (props) => {
         dialogs={ props.dialogsPage.dialogs } />
       <Messages
         dispatch={ props.dispatch }
-        messages={ props.dialogsPage.messages }
-        owner={ props.owner }/>
+        routers={ props.dialogsPage.routers }
+        owner={ props.dialogsPage.owner }/>
     </div>
   );
 }

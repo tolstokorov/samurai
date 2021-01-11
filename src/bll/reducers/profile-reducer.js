@@ -10,7 +10,28 @@ export const setNewPostText = (text) => ({
     }
 });
 
-const profileReducer = (state, action) => {
+const initialState = {
+    newPostText: '', 
+    posts: [
+        {
+            id: 0,
+            message: 'blah-blah-blah-blah-blah-blah-blah',
+            likesCount: 24
+        },
+        {
+            id: 1,
+            message: 'blah-blah-blah',
+            likesCount: 42
+        },
+        {
+            id: 2,
+            message: 'blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah',
+            likesCount: 0
+        }
+    ]
+};
+
+const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             return _addPost(state);
@@ -29,11 +50,11 @@ const _addPost = (state) => {
             message: state.newPostText,
             likesCount: 0
         };
-        const newPosts = { ...state.posts };
+        const newPosts = [ ...state.posts ];
         newPosts.push(newPost);
-        _setNewPostText(state, '');
         return {
             ...state,
+            newPostText: '',
             posts: newPosts
         };
     }

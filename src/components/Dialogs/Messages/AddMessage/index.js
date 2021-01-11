@@ -1,5 +1,5 @@
 import React from "react";
-import { addMessage, setTmpText } from "../../../../bll/store";
+import { addMessage, setTmpText } from "../../../../bll/reducers/dialogs-reducer";
 import styles from './index.module.css';
 
 const AddMessage = (props) => {

@@ -18,4 +18,4 @@ ReactDOM.render(
 );
 };
 renderRoot();
-store.subscriber(renderRoot);
+store.subscribe(renderRoot);

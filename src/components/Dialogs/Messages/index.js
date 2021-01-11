@@ -7,7 +7,7 @@ const Message = (props) => <li className={ props.itIsMe ? styles.myItem : styles
 
 const Messages = (props) => {
 
-  const messageRouting = props.messages.map(route => {
+  const messageRouting = props.routers.map(route => {
     return (
       <Route key={ route.id } exact path={ `/dialogs/id${route.id}` } >
         <ul className={ styles.list } >
