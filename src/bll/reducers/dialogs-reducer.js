@@ -102,11 +102,14 @@ const _addMessage = (state, routeId) => {
     if(state.routers[routeId].tmpText.trim()) {
         const newRoute = { ...state.routers[routeId] };
         
-        newRoute.messages.push({
-            id: newRoute.messages.length,
-            message: newRoute.tmpText,
-            sender_id: state.owner.id
-        });
+        newRoute.messages = [
+            ...newRoute.messages,
+            {
+                id: newRoute.messages.length,
+                message: newRoute.tmpText,
+                sender_id: state.owner.id
+            }
+        ];
         newRoute.tmpText = '';
 
         const newRoutes = [ ...state.routers ];
