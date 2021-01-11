@@ -14,25 +14,15 @@ export const unfollow = userId => ({
         userId
     }
 });
-export const setUsers = () => ({
+export const setUsers = users => ({
     type: SET_USERS, 
-    payload: {}
+    payload: {
+        users
+    }
 });
 
 const initialState = {
-    users: [
-        {
-            avatarURL: null,
-            id: 0,
-            followed: true, 
-            fullName: 'Test-fullName',
-            status: 'Test-status',
-            location: {
-                country: 'Test-location-country',
-                city: 'Test-location-city'
-            }
-        }
-    ]
+    users: []
 };
 
 const usersReducer = (state = initialState, action) => {
