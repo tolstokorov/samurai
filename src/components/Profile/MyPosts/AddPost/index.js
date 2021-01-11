@@ -13,11 +13,11 @@ const AddPost = (props) => {
           className={ styles.textarea }
           value={ props.newPostText }
           ref={ newPostArea }
-          onChange={ () => props.dispatch(setNewPostText(newPostArea.current.value)) }
+          onChange={ () => props.setNewPostText(newPostArea.current.value) }
         ></textarea>
         <button
           className={ styles.btn }
-          onClick={ () => props.dispatch(addPost()) }
+          onClick={ () => props.addPost() }
         >Add post</button>
       </div>
     </form>

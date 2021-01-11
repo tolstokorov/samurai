@@ -20,16 +20,6 @@ const Stub = () => <div style={ stubStyles }>Stub</div>;
 const Error404 = () => <div style={ { ...stubStyles, backgroundColor: 'darkorange' } }>404</div>;
 
 const App = (props) => {
-
-  const profile = routeProps => <Profile { ...routeProps }
-  profilePage={ props.store.getState().profileReducer }
-  dispatch={ props.store.dispatch }
-  addPost={ props.store.dispatch } />;
-
-  const dialogs = routeProps => <Dialogs { ...routeProps }
-  dialogsPage={ props.store.getState().dialogsReducer }
-  dispatch={ props.store.dispatch }/>;
-
   return (
     <div className={ styles.grid }>
 
@@ -42,16 +32,10 @@ const App = (props) => {
 
           <main className={ styles.main }>
             <Switch>
-              <Route exact path='/'>
-                { profile }
-              </Route>
-              <Route path='/profile'>
-                { profile }
-              </Route>
+              <Route exact path='/' component={ Profile }/>
+              <Route path='/profile' component={ Profile }/>
               
-              <Route path='/dialogs'>
-                { dialogs }
-              </Route>
+              <Route path='/dialogs' component={ Dialogs }/>
 
               <Route path='/news' component={ Stub } />
               <Route path='/music' component={ Stub } />

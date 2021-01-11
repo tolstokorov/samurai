@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./index.module.css";
 import Post from "./Post";
 import AddPost from "./AddPost";
+import { connect } from "react-redux";
+import { addPost, setNewPostText } from "../../../bll/reducers/profile-reducer";
 
 const MyPosts = (props) => {
 
@@ -25,10 +27,23 @@ const MyPosts = (props) => {
       </div>
 
       <AddPost
-        newPostText={ props.profilePage.newPostText }
-        dispatch={ props.dispatch } />
+        newPostText={ props.newPostText }
+        
+        setNewPostText={ props.setNewPostText }
+        addPost={ props.addPost }
+        />
     </div>
   );
 }
 
-export default MyPosts;
+const mapStateToProps = state => ({
+  newPostText: state.profileReducer.newPostText,
+  profilePage: state.profileReducer
+});
+
+const mapDispatchToProps = dispatch => ({
+  setNewPostText: (text) => dispatch(setNewPostText(text)),
+  addPost: () => dispatch(addPost())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyPosts);

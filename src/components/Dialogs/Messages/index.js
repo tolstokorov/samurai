@@ -12,12 +12,14 @@ const Messages = (props) => {
       <Route key={ route.id } exact path={ `/dialogs/id${route.id}` } >
         <ul className={ styles.list } >
           { route.messages.map(item => <Message
-          key={ item.id } message={ item.message } itIsMe={ item.sender_id === props.owner.id }/>) }
+          key={ item.id } message={ item.message } itIsMe={ item.sender_id === props.ownerId }/>) }
         </ul>
         <AddMessage
           routeId={ route.id }
           tmpText={ route.tmpText }
-          dispatch={ props.dispatch }
+          
+          setTmpText={ props.setTmpText }
+          addMessage={ props.addMessage }
         />
       </Route>
       

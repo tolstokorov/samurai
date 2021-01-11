@@ -1,5 +1,4 @@
 import React from "react";
-import { addMessage, setTmpText } from "../../../../bll/reducers/dialogs-reducer";
 import styles from './index.module.css';
 
 const AddMessage = (props) => {
@@ -11,11 +10,11 @@ const AddMessage = (props) => {
       <textarea
         ref={ messageArea }
         value={ props.tmpText }
-        onChange={ () => props.dispatch(setTmpText(props.routeId, messageArea.current.value)) }
+        onChange={ () => props.setTmpText(props.routeId, messageArea.current.value) }
       ></textarea>
       <button
         onClick={ () => {
-          props.dispatch(addMessage(props.routeId));
+          props.addMessage(props.routeId);
         } }
       >Add message</button>
     </form>
