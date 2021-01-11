@@ -57,7 +57,7 @@ const _followUnfollow = (state, userId) => ({
 
 const _setUsers = (state, newUsers) => ({
     ...state,
-    users: [ ...state.users, ...newUsers ]
+    users: [ ...newUsers ]
 });
 
 
