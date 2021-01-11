@@ -1,11 +1,12 @@
 import React from "react";
-import Header from '../Header';
-import Profile from '../Profile';
-import Nav from '../Nav';
-import Footer from '../Footer';
-import styles from './index.module.css';
-import Dialogs from "../Dialogs";
 import { Route, Switch } from "react-router-dom";
+import Dialogs from "../Dialogs";
+import Footer from '../Footer';
+import Header from '../Header';
+import Nav from '../Nav';
+import Profile from '../Profile';
+import Users from '../Users';
+import styles from './index.module.css';
 
 
 const stubStyles = {
@@ -36,6 +37,8 @@ const App = (props) => {
               <Route path='/profile' component={ Profile }/>
               
               <Route path='/dialogs' component={ Dialogs }/>
+
+              <Route path='/users' component={ Users }/>
 
               <Route path='/news' component={ Stub } />
               <Route path='/music' component={ Stub } />
