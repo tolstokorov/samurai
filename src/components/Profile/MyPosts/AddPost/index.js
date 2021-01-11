@@ -1,5 +1,4 @@
 import React from "react";
-import { addPost, setNewPostText } from "../../../../bll/reducers/profile-reducer";
 import styles from './index.module.css';
 
 const AddPost = (props) => {
