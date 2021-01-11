@@ -45,17 +45,17 @@ const profileReducer = (state = initialState, action) => {
 
 const _addPost = (state) => {
     if(state.newPostText.trim()) {
-        const newPost = {
-            id: state.posts.length,
-            message: state.newPostText,
-            likesCount: 0
-        };
-        const newPosts = [ ...state.posts ];
-        newPosts.push(newPost);
         return {
             ...state,
             newPostText: '',
-            posts: newPosts
+            posts: [
+                ...state.posts,
+                {
+                    id: state.posts.length,
+                    message: state.newPostText,
+                    likesCount: 0
+                }
+            ]
         };
     }
     return state;
