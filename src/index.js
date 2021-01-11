@@ -6,7 +6,6 @@ import { BrowserRouter } from 'react-router-dom';
 import store from './bll/store';
 import { Provider } from 'react-redux';
 
-const renderRoot = () => {
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter basename={ process.env.PUBLIC_URL }>
@@ -17,6 +16,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-};
-renderRoot();
-store.subscribe(renderRoot);
