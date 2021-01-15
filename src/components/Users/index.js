@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { follow, setUsers, unfollow } from "../../bll/reducers/users-reducer";
+import { follow, setCurrentPage, setUsers, unfollow } from "../../bll/reducers/users-reducer";
 import styles from './index.module.css';
 import default_ava from '../../share/default_ava.png';
 import axios from "axios";
@@ -27,21 +27,42 @@ const User = (props) => (
 class Users extends Component {
   componentDidMount(){
     axios
-      .get('https://social-network.samuraijs.com/api/1.0/users')
+      .get(`https://social-network.samuraijs.com/api/1.0/users?count=${
+        this.props.pageSize}&page=${this.props.currentPage}`)
       .then(data => {
-        this.props.setUsers(data.data.items);
+        this.props.setUsers(data.data);
       })
-      .catch(error => alert('Users axios error: \n' + error))
+      .catch(error => alert('Users axios error1 \n' + error))
   }
 
-  // const tmp = <pre>
-  //   { JSON.stringify(this.props.users, null, 4) }
-  // </pre>;
+  onPaginationItemClick = i => {
+    this.props.setCurrentPage(i)
+    axios
+      .get(`https://social-network.samuraijs.com/api/1.0/users?count=${
+        this.props.pageSize}&page=${ i }`)
+      .then(data => {
+        this.props.setUsers(data.data);
+      })
+      .catch(error => alert('Users axios error1 \n' + error))
+  };
 
   render() {
+    const pagesCount = 5 || Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+
+    const paginationItems = [];
+    for(let i = 1; i <= pagesCount; ++i) {
+      paginationItems.push(
+      <li className={
+          i === this.props.currentPage ? styles['pagination-item--active'] : null
+         }
+         onClick={() => { this.onPaginationItemClick(i) } } >{ i }</li>);
+    }
+
     return (
       <div>
-        {/* { tmp } <hr/> */}
+        <ul className={ styles['pagination-box'] }>
+          { paginationItems }
+        </ul>
         { this.props.users?.map(user => <User 
           key={ user.id }
           { ...user }
@@ -54,13 +75,18 @@ class Users extends Component {
 };
 
 const mapStateToProps = state => ({
-  users: state.usersReducer.users
+  users: state.usersReducer.users,
+  pageSize: state.usersReducer.pageSize,
+  totalUsersCount: state.usersReducer.totalUsersCount,
+  currentPage: state.usersReducer.currentPage
 });
 
 const mapDispatchToProps = dispatch => ({
   follow: userId => dispatch(follow(userId)),
   unfollow: userId => dispatch(unfollow(userId)),
-  setUsers: users => dispatch(setUsers(users))
+
+  setUsers: users => dispatch(setUsers(users)),
+  setCurrentPage: pageNumber => dispatch(setCurrentPage(pageNumber))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);
