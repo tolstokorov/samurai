@@ -18,9 +18,8 @@
 }
 
 .logo {
+    display: block;
     height: 50px;
-
-    --margin: 10px;
-    margin: var(--margin);
-    margin-bottom: calc(var(--margin) - 4px); /* fix */
+    
+    margin: 10px;
 }
